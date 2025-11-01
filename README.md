@@ -66,11 +66,11 @@ Attempting administrative actions triggered a UAC prompt, confirming that the st
 * Turned on **BitLocker** for OS drive
 * Installed all Windows Updates
 * Ran a full Microsoft Defender scan (clean)
-
+```
 [BitLocker Status](./Screenshots/bitlocker-status.PNG)
 [Update History](./Screenshots/update-history.PNG)
 [Defender Scan](./Screenshots/defender-scan.PNG)
-
+```
 ---
 
 ## Step 5 — Verification Script
@@ -85,8 +85,8 @@ Test-Connection 8.8.8.8 -Count 2
 Resolve-DnsName www.microsoft.com
 ```
 
-![Health Check Output](./Screenshots/healthcheck-output_1.PNG)
-![Health Check Output](./Screenshots/healthcheck-output_2.PNG)
+[Health Check Output 1](./Screenshots/healthcheck-output_1.PNG)
+[Health Check Output 2](./Screenshots/healthcheck-output_2.PNG)
 
 Artifacts stored in:
 
