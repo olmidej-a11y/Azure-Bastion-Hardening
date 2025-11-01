@@ -30,7 +30,7 @@ Restricted inbound RDP to only allow connections from the **Bastion subnet (10.0
 * Remote IPs = `10.0.1.0/26`
 * Local IP = Any
 
-![Firewall Rule](./Screenshots/firewall-rule-bastion.PNG).
+[Firewall Rule](./Screenshots/firewall-rule-bastion.PNG).
 *Inbound rule restricted to Bastion subnet*
 
 ---
@@ -44,7 +44,7 @@ Created a **standard user** `TestUser` for non-admin operations.
 net localgroup Administrators
 ```
 
-![User Roles Verification](./screenshots/user-roles-verification.png)
+[User Roles Verification](./Screenshots/user-roles-verification.PNG).
 *Output showing only LabAdmin in Administrators group*
 
 ---
@@ -54,7 +54,7 @@ net localgroup Administrators
 Logged in via Bastion as `TestUser` and attempted to open PowerShell as Administrator.
 Attempting administrative actions triggered a UAC prompt, confirming that the standard account cannot elevate privileges.
 
-![UAC Prompt](./screenshots/uac-prompt.png)
+[UAC Prompt](./Screenshots/uac-prompt.PNG)
 *Standard account blocked from elevation*
 
 > Bastion note: use `TestUser`, not `.\TestUser`, when signing in.
@@ -67,9 +67,9 @@ Attempting administrative actions triggered a UAC prompt, confirming that the st
 * Installed all Windows Updates
 * Ran a full Microsoft Defender scan (clean)
 
-![BitLocker Status](./screenshots/bitlocker-status.png)
-![Update History](./screenshots/update-history.png)
-![Defender Scan](./screenshots/defender-scan.png)
+[BitLocker Status](./Screenshots/bitlocker-status.PNG)
+[Update History](./Screenshots/update-history.PNG)
+[Defender Scan](./Screenshots/defender-scan.PNG)
 
 ---
 
@@ -85,8 +85,8 @@ Test-Connection 8.8.8.8 -Count 2
 Resolve-DnsName www.microsoft.com
 ```
 
-![Health Check Output](./screenshots/healthcheck-output_1.png)
-![Health Check Output](./screenshots/healthcheck-output_2.png)
+![Health Check Output](./Screenshots/healthcheck-output_1.PNG)
+![Health Check Output](./Screenshots/healthcheck-output_2.PNG)
 
 Artifacts stored in:
 
