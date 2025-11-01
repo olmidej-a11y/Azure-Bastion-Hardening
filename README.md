@@ -44,7 +44,7 @@ Created a **standard user** `TestUser` for non-admin operations.
 net localgroup Administrators
 ```
 
-![User Roles Verification](screenshots/user-roles-verification.png)
+![User Roles Verification](./screenshots/user-roles-verification.png)
 *Output showing only LabAdmin in Administrators group*
 
 ---
@@ -54,7 +54,7 @@ net localgroup Administrators
 Logged in via Bastion as `TestUser` and attempted to open PowerShell as Administrator.
 Attempting administrative actions triggered a UAC prompt, confirming that the standard account cannot elevate privileges.
 
-![UAC Prompt](screenshots/uac-prompt.png)
+![UAC Prompt](./screenshots/uac-prompt.png)
 *Standard account blocked from elevation*
 
 > Bastion note: use `TestUser`, not `.\TestUser`, when signing in.
@@ -67,9 +67,9 @@ Attempting administrative actions triggered a UAC prompt, confirming that the st
 * Installed all Windows Updates
 * Ran a full Microsoft Defender scan (clean)
 
-![BitLocker Status](screenshots/bitlocker-status.png)
-![Update History](screenshots/update-history.png)
-![Defender Scan](screenshots/defender-scan.png)
+![BitLocker Status](./screenshots/bitlocker-status.png)
+![Update History](./screenshots/update-history.png)
+![Defender Scan](./screenshots/defender-scan.png)
 
 ---
 
@@ -85,8 +85,8 @@ Test-Connection 8.8.8.8 -Count 2
 Resolve-DnsName www.microsoft.com
 ```
 
-![Health Check Output](screenshots/healthcheck-output_1.png)
-![Health Check Output](screenshots/healthcheck-output_2.png)
+![Health Check Output](./screenshots/healthcheck-output_1.png)
+![Health Check Output](./screenshots/healthcheck-output_2.png)
 
 Artifacts stored in:
 
