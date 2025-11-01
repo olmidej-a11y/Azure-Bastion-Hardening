@@ -86,6 +86,8 @@ Resolve-DnsName www.microsoft.com
 ```
 
 [Health Check Output 1](./Screenshots/healthcheck-output_1.PNG)
+
+
 [Health Check Output 2](./Screenshots/healthcheck-output_2.PNG)
 
 Artifacts stored in:
@@ -171,4 +173,6 @@ NSG Template details are saved in [`nsg-template.json`](./azure-export/nsg-templ
 ---
 
 **Author:** *Johnson Olumide*
+
+
 **LinkedIn:** *www.linkedin.com/in/olumide-johnson-027a96151*
