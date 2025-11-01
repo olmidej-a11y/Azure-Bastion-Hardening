@@ -66,11 +66,17 @@ Attempting administrative actions triggered a UAC prompt, confirming that the st
 * Turned on **BitLocker** for OS drive
 * Installed all Windows Updates
 * Ran a full Microsoft Defender scan (clean)
-```
+
 [BitLocker Status](./Screenshots/bitlocker-status.PNG)
+
+
 [Update History](./Screenshots/update-history.PNG)
+
+
 [Defender Scan](./Screenshots/defender-scan.PNG)
-```
+
+
+
 ---
 
 ## Step 5 — Verification Script
