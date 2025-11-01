@@ -1,0 +1,46 @@
+PS C:\Users\LabAdmin> Get-CimInstance Win32_Processor | Measure-Object -Property LoadPercentage -Average
+
+
+Count    : 1
+Average  : 2
+Sum      :
+Maximum  :
+Minimum  :
+Property : LoadPercentage
+
+
+
+PS C:\Users\LabAdmin> Get-CimInstance Win32_OperatingSystem
+
+SystemDirectory     Organization BuildNumber RegisteredUser SerialNumber            Version
+---------------     ------------ ----------- -------------- ------------            -------
+C:\Windows\system32              20348                      00454-60000-00001-AA635 10.0.20348
+
+
+PS C:\Users\LabAdmin> Get-Service Winmgmt, wuauserv, Dnscache, Spooler
+
+Status   Name               DisplayName
+------   ----               -----------
+Running  Dnscache           DNS Client
+Running  Spooler            Print Spooler
+Running  Winmgmt            Windows Management Instrumentation
+Running  wuauserv           Windows Update
+
+
+PS C:\Users\LabAdmin> Test-Connection 8.8.8.8 -Count 2
+
+Source        Destination     IPV4Address      IPV6Address                              Bytes    Time(ms)
+------        -----------     -----------      -----------                              -----    --------
+WinLab1       8.8.8.8         8.8.4.4                                                   32       1
+WinLab1       8.8.8.8         8.8.4.4                                                   32       1
+
+
+PS C:\Users\LabAdmin> Resolve-DnsName www.microsoft.com
+
+Name                           Type   TTL   Section    NameHost
+----                           ----   ---   -------    --------
+www.microsoft.com              CNAME  68    Answer     www.microsoft.com-c-3.edgekey.net
+www.microsoft.com-c-3.edgekey. CNAME  68    Answer     www.microsoft.com-c-3.edgekey.net.globalredir.akadns.net
+net
+www.microsoft.com-c-3.edgekey. CNAME  68    Answer     e13678.dscb.akamaiedge.net
+net.globalredir.akadns.net

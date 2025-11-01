@@ -1,0 +1,126 @@
+{
+  "additionalCapabilities": {
+    "hibernationEnabled": false,
+    "ultraSsdEnabled": null
+  },
+  "applicationProfile": null,
+  "availabilitySet": null,
+  "billingProfile": null,
+  "capacityReservation": null,
+  "diagnosticsProfile": null,
+  "etag": "\"13\"",
+  "evictionPolicy": null,
+  "extendedLocation": null,
+  "extensionsTimeBudget": null,
+  "hardwareProfile": {
+    "vmSize": "Standard_B2s",
+    "vmSizeProperties": null
+  },
+  "host": null,
+  "hostGroup": null,
+  "id": "/subscriptions/3ce5e0f8-b4ef-4436-97f7-c4a54f7b1e28/resourceGroups/RG-Lab1/providers/Microsoft.Compute/virtualMachines/WinLab1",
+  "identity": null,
+  "instanceView": null,
+  "licenseType": null,
+  "location": "westus",
+  "managedBy": null,
+  "name": "WinLab1",
+  "networkProfile": {
+    "networkApiVersion": null,
+    "networkInterfaceConfigurations": null,
+    "networkInterfaces": [
+      {
+        "deleteOption": "Detach",
+        "id": "/subscriptions/3ce5e0f8-b4ef-4436-97f7-c4a54f7b1e28/resourceGroups/RG-Lab1/providers/Microsoft.Network/networkInterfaces/winlab1386",
+        "primary": null,
+        "resourceGroup": "RG-Lab1"
+      }
+    ]
+  },
+  "osProfile": {
+    "adminPassword": null,
+    "adminUsername": "LabAdmin",
+    "allowExtensionOperations": true,
+    "computerName": "WinLab1",
+    "customData": null,
+    "linuxConfiguration": null,
+    "requireGuestProvisionSignal": true,
+    "secrets": [],
+    "windowsConfiguration": {
+      "additionalUnattendContent": null,
+      "enableAutomaticUpdates": true,
+      "enableVmAgentPlatformUpdates": true,
+      "patchSettings": {
+        "assessmentMode": "ImageDefault",
+        "automaticByPlatformSettings": null,
+        "enableHotpatching": false,
+        "patchMode": "AutomaticByOS"
+      },
+      "provisionVmAgent": true,
+      "timeZone": null,
+      "winRm": null
+    }
+  },
+  "placement": null,
+  "plan": null,
+  "platformFaultDomain": null,
+  "priority": null,
+  "provisioningState": "Succeeded",
+  "proximityPlacementGroup": null,
+  "resourceGroup": "RG-Lab1",
+  "resources": null,
+  "scheduledEventsPolicy": null,
+  "scheduledEventsProfile": null,
+  "securityProfile": {
+    "encryptionAtHost": null,
+    "encryptionIdentity": null,
+    "proxyAgentSettings": null,
+    "securityType": "TrustedLaunch",
+    "uefiSettings": {
+      "secureBootEnabled": true,
+      "vTpmEnabled": true
+    }
+  },
+  "storageProfile": {
+    "alignRegionalDisksToVmZone": null,
+    "dataDisks": [],
+    "diskControllerType": "SCSI",
+    "imageReference": {
+      "communityGalleryImageId": null,
+      "exactVersion": "20348.4297.251022",
+      "id": null,
+      "offer": "WindowsServer",
+      "publisher": "MicrosoftWindowsServer",
+      "sharedGalleryImageId": null,
+      "sku": "2022-datacenter-g2",
+      "version": "latest"
+    },
+    "osDisk": {
+      "caching": "ReadWrite",
+      "createOption": "FromImage",
+      "deleteOption": "Delete",
+      "diffDiskSettings": null,
+      "diskSizeGb": 127,
+      "encryptionSettings": null,
+      "image": null,
+      "managedDisk": {
+        "diskEncryptionSet": null,
+        "id": "/subscriptions/3ce5e0f8-b4ef-4436-97f7-c4a54f7b1e28/resourceGroups/RG-LAB1/providers/Microsoft.Compute/disks/WinLab1_OsDisk_1_c059208a747343319b50d72dd2392243",
+        "resourceGroup": "RG-LAB1",
+        "securityProfile": null,
+        "storageAccountType": "StandardSSD_LRS"
+      },
+      "name": "WinLab1_OsDisk_1_c059208a747343319b50d72dd2392243",
+      "osType": "Windows",
+      "vhd": null,
+      "writeAcceleratorEnabled": null
+    }
+  },
+  "tags": null,
+  "timeCreated": "2025-10-31T22:32:30.992688+00:00",
+  "type": "Microsoft.Compute/virtualMachines",
+  "userData": null,
+  "virtualMachineScaleSet": null,
+  "vmId": "fa1abe8c-f74f-4fc2-af9d-61ba1f78da0b",
+  "zones": null
+}

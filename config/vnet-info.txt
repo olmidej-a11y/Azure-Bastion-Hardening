@@ -1,0 +1,3 @@
+EnableDdosProtection    Location    Name       PrivateEndpointVNetPolicies    ProvisioningState    ResourceGroup    ResourceGuid
+----------------------  ----------  ---------  -----------------------------  -------------------  ---------------  ------------------------------------
+False                   westus      VNet-Lab1  Disabled                       Succeeded            RG-Lab1          f5eadafe-e278-4c27-a02a-dac978c8516c

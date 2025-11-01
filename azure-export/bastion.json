@@ -1,0 +1,40 @@
+{
+  "disableCopyPaste": false,
+  "dnsName": "bst-bb564a88-62ed-4aa2-9d4d-cdb6cbf2f5d9.bastion.azure.com",
+  "enableIpConnect": false,
+  "enableKerberos": false,
+  "enableSessionRecording": false,
+  "enableShareableLink": false,
+  "enableTunneling": false,
+  "etag": "W/\"b5db8841-5b26-4526-8c6f-8aeadb21b75a\"",
+  "id": "/subscriptions/3ce5e0f8-b4ef-4436-97f7-c4a54f7b1e28/resourceGroups/RG-Lab1/providers/Microsoft.Network/bastionHosts/Bastion-Lab1",
+  "ipConfigurations": [
+    {
+      "etag": "W/\"b5db8841-5b26-4526-8c6f-8aeadb21b75a\"",
+      "id": "/subscriptions/3ce5e0f8-b4ef-4436-97f7-c4a54f7b1e28/resourceGroups/RG-Lab1/providers/Microsoft.Network/bastionHosts/Bastion-Lab1/bastionHostIpConfigurations/IpConf",
+      "name": "IpConf",
+      "privateIPAllocationMethod": "Dynamic",
+      "provisioningState": "Succeeded",
+      "publicIPAddress": {
+        "id": "/subscriptions/3ce5e0f8-b4ef-4436-97f7-c4a54f7b1e28/resourceGroups/RG-Lab1/providers/Microsoft.Network/publicIPAddresses/VNet-PIP-Lab1",
+        "resourceGroup": "RG-Lab1"
+      },
+      "resourceGroup": "RG-Lab1",
+      "subnet": {
+        "id": "/subscriptions/3ce5e0f8-b4ef-4436-97f7-c4a54f7b1e28/resourceGroups/RG-Lab1/providers/Microsoft.Network/virtualNetworks/VNet-Lab1/subnets/AzureBastionSubnet",
+        "resourceGroup": "RG-Lab1"
+      },
+      "type": "Microsoft.Network/bastionHosts/bastionHostIpConfigurations"
+    }
+  ],
+  "location": "westus",
+  "name": "Bastion-Lab1",
+  "provisioningState": "Succeeded",
+  "resourceGroup": "RG-Lab1",
+  "scaleUnits": 2,
+  "sku": {
+    "name": "Basic"
+  },
+  "tags": {},
+  "type": "Microsoft.Network/bastionHosts"
+}

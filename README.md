@@ -1,0 +1,174 @@
+#  Azure Bastion VM Hardening Lab
+
+##  Overview
+
+Hands-on lab to harden a Windows Server VM in Azure using Azure Bastion, NSGs, BitLocker, and least-privilege access. 
+Goal: secure remote access, reduce exposure, and verify hardening using real outputs and Azure exports.
+
+---
+
+##  Environment Setup
+
+| Component          | Value                                    |
+| ------------------ | ---------------------------------------- |
+| **Resource Group** | RG-Lab1                                  |
+| **Region**         | West US                                  |
+| **VM**             | WinLab1 (Windows Server 2022 Datacenter) |
+| **VNet**           | VNet-Lab1 (10.0.0.0/24)                  |
+| **Bastion Subnet** | 10.0.1.0/26                              |
+| **Access**         | Azure Bastion (Basic tier, 2 instances)  |
+
+---
+
+## Step 1 — Firewall Hardening
+
+Restricted inbound RDP to only allow connections from the **Bastion subnet (10.0.1.0/26)**.
+
+**Action**
+
+* Windows Defender Firewall → Advanced Settings → Inbound Rules → RDP (3389)
+* Remote IPs = `10.0.1.0/26`
+* Local IP = Any
+
+![Firewall Rule](screenshots/firewall-rule-bastion.png)
+*Inbound rule restricted to Bastion subnet*
+
+---
+
+## Step 2 — User Account Segregation
+
+Created a **standard user** `TestUser` for non-admin operations.
+`LabAdmin` is the only administrator.
+
+```powershell
+net localgroup Administrators
+```
+
+![User Roles Verification](screenshots/user-roles-verification.png)
+*Output showing only LabAdmin in Administrators group*
+
+---
+
+## Step 3 — UAC Privilege Enforcement
+
+Logged in via Bastion as `TestUser` and attempted to open PowerShell as Administrator.
+Attempting administrative actions triggered a UAC prompt, confirming that the standard account cannot elevate privileges.
+
+![UAC Prompt](screenshots/uac-prompt.png)
+*Standard account blocked from elevation*
+
+> Bastion note: use `TestUser`, not `.\TestUser`, when signing in.
+
+---
+
+## Step 4 — System Hardening
+
+* Turned on **BitLocker** for OS drive
+* Installed all Windows Updates
+* Ran a full Microsoft Defender scan (clean)
+
+![BitLocker Status](screenshots/bitlocker-status.png)
+![Update History](screenshots/update-history.png)
+![Defender Scan](screenshots/defender-scan.png)
+
+---
+
+## Step 5 — Verification Script
+
+Quick PowerShell health check to confirm CPU load, OS info, key services, and network connectivity.
+
+```powershell
+Get-CimInstance Win32_Processor | Measure-Object -Property LoadPercentage -Average
+Get-CimInstance Win32_OperatingSystem
+Get-Service Winmgmt, wuauserv, Dnscache, Spooler
+Test-Connection 8.8.8.8 -Count 2
+Resolve-DnsName www.microsoft.com
+```
+
+![Health Check Output](screenshots/healthcheck-output_1.png)
+![Health Check Output](screenshots/healthcheck-output_2.png)
+
+Artifacts stored in:
+
+```
+/scripts/healthcheck.ps1
+/outputs/healthcheck.txt
+```
+
+---
+
+## Repo Structure
+
+```
+Azure-Bastion-Hardening/
+├── README.md
+├── /screenshots/
+│   ├── firewall-rule-bastion.png
+│   ├── user-roles-verification.png
+│   ├── uac-prompt.png
+│   ├── bitlocker-status.png
+│   ├── update-history.png
+│   ├── defender-scan.png
+│   ├── healthcheck-output_1.png
+│   └── healthcheck-output_2.png
+├── /azure-export/
+│   ├── vm-template.json
+│   ├── nsg-template.json
+│   └── bastion.json
+├── /config/
+│   ├── nsg-rules.txt
+│   └── vnet-info.txt
+├── /scripts/
+│   └── healthcheck.ps1
+└── /outputs/
+    └── healthcheck.txt
+```
+
+---
+
+## Azure CLI Exports
+
+**1. NSG Rules**  
+All NSG rules for the lab VM are exported in [`nsg-rules.txt`](./config/nsg-rules.txt).  
+
+**2. Bastion Configuration**  
+Bastion details exported from Azure are available in [`bastion.json`](./azure-export/bastion.json).  
+
+**3. VM Template**  
+VM configuration details are saved in [`vm-template.json`](./azure-export/vm-template.json).  
+
+**4. VNet Info**  
+VNet Info details are saved in [`vnet-info.txt`](./config/vnet-info.txt). 
+
+**5. NSG Template**  
+NSG Template details are saved in [`nsg-template.json`](./azure-export/nsg-template.json). 
+
+[View all exported Azure JSON files](./azure-export/)
+
+
+
+
+---
+
+## Results
+
+* RDP limited to Bastion subnet
+* Standard user cannot elevate
+* BitLocker enabled
+* NSG rules verified
+* System patched and clean
+
+**Outcome:** Hardened, access-controlled Azure VM ready for cloud-security and DevOps demonstrations.
+
+---
+
+## Notes
+
+* Bastion doesn’t support `.\username` syntax for local logins.
+* Always shut down the VM when idle to preserve free-tier credits.
+* Export ARM templates after each build for version control.
+
+---
+
+**Author:** *Johnson Olumide*
+**LinkedIn:** *www.linkedin.com/in/olumide-johnson-027a96151*
