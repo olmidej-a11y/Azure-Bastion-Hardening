@@ -109,27 +109,29 @@ Artifacts stored in:
 
 ```
 Azure-Bastion-Hardening/
-├── README.md
+
 ├── /screenshots/
-│   ├── firewall-rule-bastion.png
-│   ├── user-roles-verification.png
-│   ├── uac-prompt.png
 │   ├── bitlocker-status.png
+│   ├── defender-scan.png 
+│   ├── firewall-rule-bastion.png  
+│   ├── healthcheck-output_1.png       
+│   ├── healthcheck-output_2.png    
+│   ├── uac-prompt.png
 │   ├── update-history.png
-│   ├── defender-scan.png
-│   ├── healthcheck-output_1.png
-│   └── healthcheck-output_2.png
+│   └── user-roles-verification.png
 ├── /azure-export/
-│   ├── vm-template.json
+│   ├── bastion.json 
 │   ├── nsg-template.json
-│   └── bastion.json
+│   └── vm-template.json
 ├── /config/
 │   ├── nsg-rules.txt
 │   └── vnet-info.txt
+│
+├── /outputs/
+│   └── healthcheck.txt
 ├── /scripts/
 │   └── healthcheck.ps1
-└── /outputs/
-    └── healthcheck.txt
+└── README.md
 ```
 
 ---
