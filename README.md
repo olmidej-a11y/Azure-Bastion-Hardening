@@ -30,7 +30,7 @@ Restricted inbound RDP to only allow connections from the **Bastion subnet (10.0
 * Remote IPs = `10.0.1.0/26`
 * Local IP = Any
 
-![Firewall Rule](./Screenshots/firewall-rule-bastion.PNG)
+![Firewall Rule](./Screenshots/firewall-rule-bastion.PNG).
 *Inbound rule restricted to Bastion subnet*
 
 ---
